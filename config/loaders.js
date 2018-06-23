@@ -156,8 +156,14 @@ const scssLoaderDev = {
   use: [
     require.resolve("style-loader"),
     {
-      loader:
-        "typings-for-css-modules-loader?modules&sass&namedExport&camelCase"
+        loader: 'typings-for-css-modules-loader',
+        options: {
+            modules: true,
+            namedExport: true,
+            camelCase: true,
+            minimize: true,
+            localIdentName: "[local]_[hash:base64:5]"
+        }
     },
     precssLoader,
     // rawCssLoaderDev,
