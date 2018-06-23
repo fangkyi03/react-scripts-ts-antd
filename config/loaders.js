@@ -185,7 +185,7 @@ const lessLoaderDev = {
     require.resolve("style-loader"),
     rawCssLoaderDev,
     postcssLoader,
-    require.resolve("less-loader")
+    require.resolve('less-loader')
   ]
 };
 
