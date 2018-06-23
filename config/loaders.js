@@ -153,7 +153,16 @@ const cssLoaderProd = {
 // scss loader
 const scssLoaderDev = {
   test: /\.scss$/,
-  use: [require.resolve("style-loader"), rawCssLoaderDev, precssLoader]
+  use: [
+    require.resolve("style-loader"),
+    {
+      loader:
+        "typings-for-css-modules-loader?modules&sass&namedExport&camelCase"
+    },
+    precssLoader,
+    // rawCssLoaderDev,
+    // precssLoader
+  ]
 };
 
 const scssLoaderProd = {
@@ -176,10 +185,7 @@ const lessLoaderDev = {
     require.resolve("style-loader"),
     rawCssLoaderDev,
     postcssLoader,
-    {
-      loader: "style-loader!css-loader!less-loader"
-    }
-    // require.resolve('less-loader')
+    require.resolve("less-loader")
   ]
 };
 

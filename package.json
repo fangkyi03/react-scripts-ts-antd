@@ -70,7 +70,8 @@
     "css-loader": "^0.28.7",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "typescript": "^2.7.1"
+    "typescript": "^2.7.1",
+    "typings-for-css-modules-loader": "^1.7.0"
   },
   "peerDependencies": {
     "typescript": "2.x"
