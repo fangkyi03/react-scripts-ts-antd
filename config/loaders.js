@@ -177,7 +177,19 @@ const scssLoaderProd = {
     Object.assign(
       {
         fallback: require.resolve("style-loader"),
-        use: [rawCssLoaderProd, precssLoader]
+        use: [
+          {
+            loader: 'typings-for-css-modules-loader',
+            options: {
+              modules: true,
+              namedExport: true,
+              camelCase: true,
+              minimize: true,
+              localIdentName: "[local]_[hash:base64:5]"
+            }
+          },
+          precssLoader
+        ]
       },
       extractTextPluginOptions
     )
